@@ -1,0 +1,91 @@
+<view class="page-home-farmer">
+  <view class="page-header">
+    <image class="page-header-icon1" src="{{imgUrl.icon1}}" mode="" />
+    <view class="page-header-content">丰富农场资料可增加信誉分 请上传</view>
+    <image class="page-header-star" src="{{imgUrl.star}}" mode="" />
+  </view>
+
+  <view class="page-content">
+    <view class="content-title">农场主身份证信息</view>
+    <view class="content-box">
+      <view class="img">
+         <image src="{{dataList.userIdCardBack}}" mode="" data-name="userIdCardBack" bindtap='chooseImage'/>
+      </view>
+      <view class="img">
+         <image src="{{dataList.userIdCardForword}}" mode="" data-name="userIdCardForword" bindtap='chooseImage'/>
+      </view>
+    </view>
+  </view>
+  <view class="page-content">
+    <view class="content-title">农场资质</view>
+    <view class="content-box">
+      <view class="img">
+         <image src="{{dataList.userQuaBusiness}}" data-name="userQuaBusiness" mode="" bindtap='chooseImage'/>
+      </view>
+      <view class="img">
+         <image src="{{dataList.userQuaOther}}" data-name="userQuaOther" mode="" bindtap='chooseImage'/>
+      </view> 
+    </view>
+  </view>
+  <view class="page-content">
+    <view class="content-title">有机绿色等认证资质</view>
+    <view class="content-box">
+      <view class="img">
+         <image src="{{dataList.userGradeCert}}" data-name="userGradeCert" mode="" bindtap='chooseImage'/>
+      </view>
+      <view class="img">
+         <image src="{{dataList.userGradeOther}}" data-name="userGradeOther" mode="" bindtap='chooseImage'/>
+      </view>
+    </view>
+  </view>
+  <view class="page-content">
+    <view class="content-title">农场环境图</view>
+    <view class="content-box">
+      <view class="img">
+         <image src="{{dataList.userFarmBack}}" data-name="userFarmBack" mode="" bindtap='chooseImage'/>
+      </view>
+      <view class="img">
+         <image src="{{dataList.userFarmForward}}" data-name="userFarmForward" mode="" bindtap='chooseImage'/>
+      </view>
+    </view>
+  </view>
+  <view class="page-content">
+    <view class="content-title">代言人图片和logo</view>
+    <view class="content-box">
+      <view class="img">
+         <image src="{{dataList.represent}}" data-name="represent" mode="" bindtap='chooseImage'/>
+      </view>
+      <view class="img">
+         <image src="{{dataList.log}}" data-name="log" mode="" bindtap='chooseImage'/>
+      </view>
+    </view>
+  </view>
+  <view class="page-msg">
+    <view>
+      <text>成立时间</text>
+      <picker class="picker" mode="date" value="{{date}}" bindchange="bindDateChange">
+        <view>
+          {{time}}
+        </view>
+      </picker>
+    </view>
+    <view>
+      <text>联系人</text>
+      <input value="{{concat}}" data-param="concat" bindblur="onBlur" type="text" />
+    </view>
+    <view>
+      <text>联系方式</text>
+      <input value="{{phone}}" data-param="phone" bindblur="onBlur" type="number" />
+    </view>
+    <view>
+      <text>联系邮箱</text>
+      <input value="{{email}}" data-param="email" bindblur="onBlur" type="text" />
+    </view>
+  </view>
+
+  <form bindsubmit="submitFormId" report-submit='true' >
+  <button form-type="submit"class="btn" bindtap="btnFun" wx:if="{{kxFarmStatus != 1}}">
+    确定
+  </button>
+  </form>
+</view>

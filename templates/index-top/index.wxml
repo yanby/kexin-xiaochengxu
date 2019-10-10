@@ -1,0 +1,37 @@
+<template name="index-top">
+
+  <view class="modal">
+      <view class="modal-mask" bindtap="onModalCloseTap"/>
+      <view class="modal-container-top">
+        <view class="page-card-index">
+          <view class="page-title-index">{{farmName}}</view>
+          <view class="page-boxs-index">
+            <view wx:for="{{threeList}}" wx:key="{{item.id}}" class="{{pengActiveId == item.id ? 'box-index box-active-index' : 'box-index'}}" data-id="{{item.id}}"  bindtap="choseBoxType">{{item.name}}</view>
+          </view>
+          <view class="pv-left-index">
+            <picker-view class="picker-view" value="{{value}}" indicator-style="height: 50rpx;" bindchange="bindChange">
+              <picker-view-column>
+                <view wx:for="{{firstTree}}" wx:key="{{item.name}}">{{item.name}}</view>
+              </picker-view-column>
+              <picker-view-column>
+                <view wx:for="{{secondTree}}" wx:key="{{item.name}}">{{item.name}}</view>
+              </picker-view-column>
+              <picker-view-column>
+                <view wx:for="{{thirdTree}}" wx:key="{{item.name}}">{{item.variety}}</view>
+              </picker-view-column>
+            </picker-view>
+          </view>
+        </view>
+
+        <form bindsubmit="submitFormId" report-submit='true' >
+        <button form-type="submit">
+           <view class="modal-button" bindtap="tapConfirm">确定</view>
+        </button>
+        </form>
+
+       
+        <view class="modal-button-grey" bindtap="linkPlantStartCrop">添加新批次</view>
+        <view class="modal-button-grey" bindtap="linkHomeFarmList">管理农场</view>
+      </view>
+  </view>
+</template>

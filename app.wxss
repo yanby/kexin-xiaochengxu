@@ -1,0 +1,14 @@
+/**app.wxss**/
+page {
+  width: 750rpx;
+  margin: 0 auto;
+  background: #F7F7F7;
+} 
+button{
+  padding: 0;
+  font-size: 36rpx;
+  background-color: transparent;
+}
+button::after {
+  border: none;
+}

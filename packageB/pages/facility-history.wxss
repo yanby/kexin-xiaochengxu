@@ -1,0 +1,219 @@
+.facility-history {
+  width: 750rpx;
+  padding-bottom: 50rpx;
+}
+
+.page-crop-card {
+  display: flex;
+  justify-content: space-between;
+  width: 614rpx;
+  margin: 20rpx auto 20rpx;
+  background: rgba(255,255,255,1);
+  border-radius: 12rpx;
+  padding: 32rpx 48rpx 32rpx 32rpx;
+}
+
+.list-column-1 {
+  width: 166rpx;
+  height: 166rpx;
+}
+
+.list-column-1 image {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+}
+
+.list-column-2 {
+  width: 356rpx;
+  margin-left: 20rpx;
+}
+
+.crop-name {
+  font-size: 28rpx;
+  font-family: SF Pro Text;
+  font-weight: bold;
+  color: rgba(26,26,26,1);
+  margin-bottom: 16rpx;
+}
+
+.crop-info,.crop-batch {
+  font-size: 24rpx;
+  font-family: SF Pro Text;
+  font-weight: 400;
+  color: rgba(89,87,87,1);
+  padding-bottom: 16rpx;  
+}
+
+.list-column-3 {
+  flex-grow: 1;
+}
+
+.crop-score {
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  line-height: 80rpx;
+  color:rgba(255,255,255,1);
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(91,193,119,1);
+  border-radius: 50%;
+  text-align: center;
+}
+
+.crop-judge {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(89,87,87,1);
+  text-align: center;
+  padding-top: 10rpx;
+}
+
+.page-time-card {
+  padding: 30rpx;
+  border-radius: 12rpx;
+  margin: 0 auto;
+}
+
+.page-time-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.column1 {
+  width: 150rpx;
+  text-align: center;
+}
+.column2 {
+  position: relative;
+  background: #fff;
+  width: 480rpx;
+  margin-left: 40rpx;
+  padding-left: 20rpx;
+  margin-bottom: 10rpx;
+}
+.time-year {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  color: drgba(16,16,16,1);
+}
+
+.time-monthday {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(149,152,154,1);
+}
+
+
+
+.line1 {
+  margin-top: 40rpx;
+  margin-bottom: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(89,87,87,1);
+}
+
+.line2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.line2-left {
+  font-size: 28rpx;
+  font-family: Montserrat;
+  font-weight: 300;
+  color: rgba(91,193,119,1);
+  margin-right: 28rpx;
+}
+
+.line2-right {
+  font-size: 20rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(255,255,255,1);
+  background: rgba(214,214,214,1);
+  border-radius: 20rpx;
+  padding: 0 10rpx;
+}
+
+.line3 {
+  font-size: 28rpx;
+  font-family: Montserrat;
+  font-weight: 400;
+  color: rgba(26,26,26,1);
+  margin-bottom: 20rpx;
+}
+.line4-wrap{
+  display: flex;
+}
+.line4 image {
+  width: 100rpx;
+  height: 80rpx;
+  background-size: 100%;
+  margin-right: 10rpx;
+}
+
+.ball {
+  position: absolute;
+  left: 155rpx;
+  top: 50%;
+  margin-top: -10rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: rgba(91,193,119,1);
+  border-radius: 50%;
+}
+
+.ball-top-line {
+  position: absolute;
+  left: 162rpx;
+  top: 0;
+  width: 0;
+  height: 50%;
+  border-right: 2rpx solid rgba(91,193,119,1);
+}
+
+.ball-bot-line {
+  position: absolute;
+  left: 162rpx;
+  bottom: 0;
+  width: 0;
+  height: 50%;
+  border-right: 2rpx solid rgba(91,193,119,1);
+}
+.zhuangtai{
+  position: absolute;
+  right: 30rpx;
+  top: -8rpx;
+  width:97rpx;
+  height:56rpx;
+  line-height: 56rpx;
+  background: #80d75e;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  margin-top: 40rpx;
+}
+.zhuangtai.di{
+   background: #83dcde;
+}
+.zhuangtai.gao{
+   background: #f77237;
+}
+
+.page-time-list:nth-child(1) .ball-top-line {
+  display: none;
+}
+
+.page-time-list:nth-last-child(1) .ball-bot-line {
+  display: none;
+}

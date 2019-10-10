@@ -1,0 +1,148 @@
+.index-first{
+ 
+}
+/* 第一种子项 */
+.one{
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap:wrap;
+  padding: 0 35rpx 0rpx;
+}
+.one-item{
+  width: 200rpx;
+  height: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  margin: 15rpx 8rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #BFBFBF;
+  color: #BFBFBF;
+  font-size: 28rpx;
+
+}
+.one-item.cur{
+  color: #5BC177;
+  border: 1rpx solid #5BC177;
+}
+
+
+/* 第二种子项 */
+.module-process {
+  width: 100%;
+}
+
+.module-process-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin:0 auto 10rpx;
+}
+
+.content {
+  /* flex: 1 1 auto; */
+}
+
+.item-top {
+  position: relative;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  width: 88rpx;
+  padding: 8rpx 0;
+  margin: 0 auto;
+  text-align: center;
+  color:rgba(191,191,191,1);
+  border: 2rpx solid rgba(191,191,191,1);
+  border-radius: 14rpx;
+  z-index: 1;
+}
+
+.item-bot {
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: rgba(191,191,191,1);
+  width: 114rpx;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.content-active .item-top {
+  border:2rpx solid rgba(91,193,119,1);
+  color:rgba(91,193,119,1);
+}
+
+.content-active .item-bot {
+  color:rgba(91,193,119,1);
+}
+.dashed {
+  flex-grow: 1;
+  width: 100%;
+  height: 10rpx;
+  border-top: 2rpx dashed rgba(191, 191, 191, 1);
+}
+
+.dashed-active {
+  border-top: 2rpx dashed rgba(91,193,119,1);
+}
+
+/* 拍照环节 */
+.take{
+  padding: 30rpx 35rpx 0;
+}
+.take-title{
+  background: #fff;
+  width: 680rpx;
+  height: 82rpx;
+  line-height: 82rpx; 
+}
+.take-title image{
+  margin-left: 60rpx;
+  width: 165rpx;
+  height: 61rpx;
+  vertical-align: middle;
+  background-size: 100% 100%；
+}
+.take-title text{
+  font-size: 26rpx;
+  border-left: 2rpx solid #BFBFBF;
+  padding-left: 50rpx;
+  vertical-align: middle;
+  margin-left: 50rpx;
+}
+.take-msg{
+  margin-top: 30rpx;
+  width: 678rpx;
+  padding-top: 30rpx;
+  background: #fff;
+}
+.take-swiper{
+   width: 608rpx;
+   margin: 30rpx auto 0;
+}
+.u-wrp-bnr {
+  width: 608rpx;
+  height: 504rpx;
+  display: block;
+  background: #fff;
+}
+.u-img-slide {
+  width: 100%;
+  height: inherit;
+}
+.take-pai{
+  padding: 30rpx 0 20rpx;
+  text-align: center;
+}
+.take-pai image{
+  width: 160rpx;
+  height: 160rpx;
+  background-size: 100% 100%;
+}
+.swiper-txt{
+  position: absolute;
+  left: 10rpx;
+  top: 10rpx;
+  color: #fff;
+}
+

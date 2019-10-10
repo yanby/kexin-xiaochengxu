@@ -1,0 +1,165 @@
+<view class="facility-monitor">
+  <view class="tab">
+    <view class="{{tab == 1 ? 'tab-list cur' : 'tab-list '}}" bindtap="tianqiFun">数据监测</view>
+    <view class="{{tab == 2 ? 'tab-list cur' : 'tab-list '}}" bindtap="shujuFun">天气预报</view>
+  </view>
+  <view class="jiance" wx:if="{{tab == 1}}">
+     <view class="total">
+      <image src="{{imgUrl.baojing}}"></image>
+      <view class="total-num"><text>{{currentCoteWarningNum}}</text>条</view>
+    </view>
+    
+    <!-- <view class="msg">                                                              
+      <view class="msg-num">报警消息</view>
+      <view class="msg-list">本地块：{{currentCoteWarningNum}}</view>
+      <view class="msg-list">
+        报警地块：
+      <text class="peng" wx:for="{{coteWarningInfo}}">{{item.name}}：<text class="warn">{{item.warningNum}}条</text></text>
+      </view>
+    </view> -->
+    <view class="list" wx:key="{{item}}" wx:for="{{deviceInfos}}" bindtap="deviceFun" data-id="{{item.id}}" data-key="{{item.infoKey}}">
+      <view class="img" wx:if="{{item.infoKey == 'ILL' || item.infoKey == 'ILL1' || item.infoKey == 'ILL2' || item.infoKey == 'ILL3' || item.infoKey == 'ILL4'}}"><image src="{{imgUrl.guangzhaoQiangdu}}"></image></view>
+       <view class="img" wx:elif="{{item.infoKey == 'SEC' || item.infoKey == 'SEC1' || item.infoKey == 'SEC2' || item.infoKey == 'SEC3' || item.infoKey == 'SEC4'}}"><image src="{{imgUrl.diandao}}"></image></view>
+      <view class="img" wx:elif="{{item.infoKey == 'SHR' || item.infoKey == 'SHR1' || item.infoKey == 'SHR2' || item.infoKey == 'SHR3' || item.infoKey == 'SHR4'}}"><image src="{{imgUrl.turangShidu}}"></image></view>
+      <view class="img" wx:elif="{{item.infoKey == 'STMP' || item.infoKey == 'STMP1' || item.infoKey == 'STMP2' || item.infoKey == 'STMP3' || item.infoKey == 'STMP4'}}"><image src="{{imgUrl.turangWendu}}"></image></view>
+      <view class="img" wx:elif="{{item.infoKey == 'TMP' || item.infoKey == 'TMP1' || item.infoKey == 'TMP2' || item.infoKey == 'TMP3' || item.infoKey == 'TMP4'}}"><image src="{{imgUrl.kongqiWendu}}"></image></view>
+      <view class="img" wx:elif="{{item.infoKey == 'HR' || item.infoKey == 'HR1' || item.infoKey == 'HR2' || item.infoKey == 'HR3' || item.infoKey == 'HR4'}}"><image src="{{imgUrl.turangShuifeng}}"></image></view>
+      <view class="img" wx:elif="{{item.infoKey == 'CO2' || item.infoKey == 'CO21' || item.infoKey == 'CO22' || item.infoKey == 'CO23' || item.infoKey == 'CO24'}}"><image src="{{imgUrl.eryanghuatan}}"></image></view>
+      <view class="txt">
+        <view class="name">{{item.inductor}}</view>
+        <view class="info"><text>{{item.infoValue}}</text>{{item.unit}}</view>
+        <view class="time">{{item.intoTime}}</view>
+      </view>
+      <view class="zhuangtai" wx:if="{{item.rangeValue == '0'}}">合理</view>
+      <view class="zhuangtai gao" wx:elif="{{item.rangeValue == '1'}}">偏高</view>
+      <view class="zhuangtai di" wx:if="{{item.rangeValue == '-1'}}">偏低</view>
+    </view>
+  </view>
+  
+  <view class="parms-weather" wx:if="{{tab == 2}}">
+    <view class="title">
+      <view class="tianqi"><image src="{{imgUrl.tianqi}}"></image></view>
+      <view class="base">
+        <view class="address">{{address}}</view>
+        <view class="kongqi ">空气污染指数：
+          <text wx:if="{{result.pm25 >= 0 && result.pm25 <= 50}}">优</text>
+          <text wx:elif="{{result.pm25 > 50 && result.pm25 <= 100}}">良</text>
+          <text wx:elif="{{result.pm25 > 100 && result.pm25 <= 150}}">轻微</text>
+          <text wx:elif="{{result.pm25 > 150 && result.pm25 <= 200}}">轻度</text>
+          <text wx:elif="{{result.pm25 > 200 && result.pm25 <= 300}}">中度</text>
+          <text wx:elif="{{result.pm25 > 300}}">重度</text>  
+        </view>
+      </view>
+      <view class="dushu">{{result.temperature}}℃ 
+        <text wx:if="{{result.skycon == 'CLEAR_DAY' || result.skycon == 'CLEAR_NIGHT'}}">晴</text>
+        <text wx:elif="{{result.skycon == 'PARTLY_CLOUDY_DAY' || result.skycon == 'PARTLY_CLOUDY_NIGHT'}}">多云</text>
+        <text wx:elif="{{result.skycon == 'CLOUDY'}}">阴</text>
+        <text wx:elif="{{result.skycon == 'WIND'}}">大风</text>
+        <text wx:elif="{{result.skycon == 'HAZE'}}">雾霾</text>
+        <text wx:elif="{{result.skycon == 'RAIN'}}">雨</text>
+        <text wx:elif="{{result.skycon == 'SNOW'}}">雪</text>
+      </view>
+      <view class="msg">
+        <view>气压：{{result.pres}}Pa</view>
+        <view>
+          <text wx:if="{{result.wind.direction >= 0 && result.wind.direction <= 45}}">北风：</text>
+          <text wx:elif="{{result.wind.direction > 45 && result.wind.direction <= 90}}">东北风：</text>
+          <text wx:elif="{{result.wind.direction > 90 && result.wind.direction <= 135}}">东风：</text>
+          <text wx:elif="{{result.wind.direction > 135 && result.wind.direction <= 180}}">东南风：</text>
+          <text wx:elif="{{result.wind.direction > 180 && result.wind.direction <= 225}}">南风：</text>
+          <text wx:elif="{{result.wind.direction > 225 && result.wind.direction <= 270}}">西南风：</text>
+          <text wx:elif="{{result.wind.direction > 270 && result.wind.direction <= 315}}">西风：</text>
+          <text wx:elif="{{result.wind.direction > 315 && result.wind.direction <= 360}}">西北风：</text>
+
+          <text wx:if="{{result.wind.speed >= 0 && result.wind.speed <= 0.2}}">0级</text>
+          <text wx:elif="{{result.wind.speed >= 0.3 && result.wind.speed <= 1.5}}">1级</text>
+          <text wx:elif="{{result.wind.speed >= 1.6 && result.wind.speed <= 3.3}}">2级</text>
+          <text wx:elif="{{result.wind.speed >= 3.4 && result.wind.speed <= 5.4}}">3级</text>
+          <text wx:elif="{{result.wind.speed >= 5.5 && result.wind.speed <= 7.9}}">4级</text>
+          <text wx:elif="{{result.wind.speed >= 8.0 && result.wind.speed <= 10.7}}">5级</text>
+          <text wx:elif="{{result.wind.speed >= 10.8 && result.wind.speed <= 13.8}}">6级</text>
+          <text wx:elif="{{result.wind.speed >= 13.9 && result.wind.speed <= 17.1}}">7级</text>
+          <text wx:elif="{{result.wind.speed >= 17.2 && result.wind.speed <= 20.7}}">8级</text>
+          <text wx:elif="{{result.wind.speed >= 20.8 && result.wind.speed <= 24.4}}">9级</text>
+          <text wx:elif="{{result.wind.speed >= 24.5 && result.wind.speed <= 28.4}}">10级</text>
+          <text wx:elif="{{result.wind.speed >= 28.5 && result.wind.speed <= 32.6}}">11级</text>
+          <text wx:elif="{{result.wind.speed >= 32.6}}">12级</text>
+        </view>
+        <view>湿度：{{result.humidity}}</view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="container">
+        <view class="xiaoshi">逐小时预报</view>
+        <canvas canvas-id="areaCanvas" disable-scroll="true" class="lineCanvas" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+      </view>
+      <view class="wutian">
+       <view class="xiaoshi">5天预报</view>
+        <view class="name">
+        <view wx:for="{{temperature}}" wx:key="{{item}}">
+          <text wx:if="{{item.date == 0}}">星期天</text>
+          <text wx:elif="{{item.date == 1}}">星期一</text>
+          <text wx:elif="{{item.date == 2}}">星期二</text>
+          <text wx:elif="{{item.date == 3}}">星期三</text>
+          <text wx:elif="{{item.date == 4}}">星期四</text>
+          <text wx:elif="{{item.date == 5}}">星期五</text>
+          <text wx:elif="{{item.date == 6}}">星期六</text>
+        </view>
+        </view>
+        <view class="time">
+          <text wx:for="{{aqi}}">{{item.date}}</text>
+          
+        </view>
+        <view class="icon"></view>
+        <view class="type"> 
+          <view  wx:for="{{daily.skycon}}" wx:key="{{item}}">
+            <text wx:if="{{item.value == 'CLEAR_DAY' || item.value == 'CLEAR_NIGHT'}}">晴</text>
+            <text wx:if="{{item.value == 'PARTLY_CLOUDY_DAY' || item.value == 'PARTLY_CLOUDY_NIGHT'}}">多云</text>
+            <text wx:if="{{item.value == 'CLOUDY'}}">阴</text>
+            <text wx:if="{{item.value == 'WIND'}}">大风</text>
+            <text wx:if="{{item.value == 'HAZE'}}">雾霾</text>
+            <text wx:if="{{item.value == 'RAIN'}}">雨</text>
+            <text wx:if="{{item.value == 'SNOW'}}">雪</text>
+          </view>
+        </view>
+        <view class="wendu">
+          <text wx:for="{{daily.temperature}}">{{item.max}}℃</text>
+        </view>
+        <view class="lineCanvas1">
+          <canvas canvas-id="lineCanvas1"></canvas>
+        </view>
+        <view class="lineCanvas2">
+          <canvas canvas-id="lineCanvas2"></canvas>
+        </view>
+        <view class="wendu">
+          <text wx:for="{{daily.temperature}}" wx:key="{{item}}">{{item.min}}℃</text>
+        </view>
+        <view class="feng">
+          <view wx:for="{{daily.wind}}" wx:key="{{item}}">
+            <text  wx:if="{{item.avg.direction >= 0 && item.avg.direction <= 45}}">北风</text>
+            <text wx:if="{{item.avg.direction > 45 && item.avg.direction <= 90}}">东北风</text>
+            <text wx:if="{{item.avg.direction > 90 && item.avg.direction <= 135}}">东风</text>
+            <text wx:if="{{item.avg.direction > 135 && item.avg.direction <= 180}}">东南风</text>
+            <text wx:if="{{item.avg.direction > 180 && item.avg.direction <= 225}}">南风</text>
+            <text wx:if="{{item.avg.direction > 225 && item.avg.direction <= 270}}">西南风</text>
+            <text wx:if="{{item.avg.direction > 270 && item.avg.direction <= 315}}">西风</text>
+            <text wx:if="{{item.avg.direction > 315 && item.avg.direction <= 360}}">西北风</text>
+          </view>
+        </view>
+        <view class="zhiliang">
+          <view wx:for="{{daily.pm25}}" wx:key="{{item}}">
+            <text wx:if="{{item.avg >= 0 && item.avg <= 50}}">优</text>
+            <text wx:elif="{{item.avg > 50 && item.avg <= 100}}">良</text>
+            <text wx:elif="{{item.avg > 100 && item.avg <= 150}}">轻微</text>
+            <text wx:elif="{{item.avg > 150 && item.avg <= 200}}">轻度</text>
+            <text wx:elif="{{item.avg > 200 && item.avg <= 300}}">中度</text>
+            <text wx:elif="{{item.avg > 300}}">重度</text>  
+          </view>
+        </view>
+      
+      </view>
+      
+     
+    </view>
+  </view>
+</view>

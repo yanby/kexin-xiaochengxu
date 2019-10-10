@@ -1,0 +1,20 @@
+<view class="page-welcome">
+  <view class="welcome-bg" >
+      <image src="{{imgUrl.bgBig}}" mode="" />
+  </view>
+  <view class="page-center">
+    <image src="{{imgUrl.welcome}}" mode="" />
+  </view>
+  <view class="title">欢迎使用可信农场</view>
+  <view class="page-bottom">
+    <!-- <view class="page-tips">回答十道题，让我们了解你，提供更好的服务。</view> -->
+    <!-- <view class="page-logo">
+      <image src="{{imgUrl.logo}}" mode="" />
+    </view> -->
+    <view class="page-button" bindtap="goFun">
+      <view class='button'>立即体验</view>
+      <!-- <button class='button' plain="true"
+open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">立即体验</button> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<view class="page-home-credit">
+  <view class="page-title">信誉评分标准</view>
+  <view class="page-info">信誉分标准是按照可信农场算法模型核算而得，涵盖30+条专业数据进行权重赋分，已有50家农场长达8年数据验证，已获得市面普遍认可</view>
+  <view class="page-scores">
+    <view class="page-score">
+      <view class="page-ball"></view>
+      <view class="page-txt">生产记录</view>
+      <view class="page-num">80%</view>
+    </view>
+    <view class="page-score">
+      <view class="page-ball"></view>
+      <view class="page-txt">农场基本面</view>
+      <view class="page-num">5%</view>
+    </view>
+    <view class="page-score">
+      <view class="page-ball"></view>
+      <view class="page-txt">用户评价</view>
+      <view class="page-num">5%</view>
+    </view>
+    <view class="page-score">
+      <view class="page-ball"></view>
+      <view class="page-txt">检测机构</view>
+      <view class="page-num">5%</view>
+    </view>
+    <view class="page-score">
+      <view class="page-ball"></view>
+      <view class="page-txt">生产记录</view>
+      <view class="page-num">5%</view>
+    </view>
+  </view>
+  <view class="page-use">
+    <view class="page-use-title">信誉分用途</view>
+    <view class="page-use-content">
+      <view>包销定价</view>
+      <view>设备租赁定价</view>
+      <view>金融贷款</view>
+      <view>设备免费租赁</view>
+    </view>
+  </view>
+</view>

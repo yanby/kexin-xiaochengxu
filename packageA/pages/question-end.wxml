@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="page-img">
+    <image src="{{imgUrl.wenben}}" mode="" />
+  </view>
+  <view class="page-title">
+    恭喜你
+  </view>
+  <view class="page-content">
+    答题完成去创建农场吧！
+  </view>
+  
+  <view class="page-button">
+    <view bindtap="toLink">创建农场</view>
+  </view>
+  <view class="page-logo">
+    <image src="{{imgUrl.logo}}" mode="" />
+  </view>
+</view>

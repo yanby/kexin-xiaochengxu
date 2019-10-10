@@ -1,0 +1,20 @@
+<view class="crop-msg">
+  <view class="title">
+    <view class="" wx:for="{{items}}" data-id="{{item.id}}" class="{{active == item.id ? 'cur' : ''}}" bindtap="choseBox">{{item.name}}</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:for="{{list}}">
+      <view class="del" data-id="{{item.id}}" bindtap='delParm'>
+        <image src="/images/del.png"></image>
+      </view>
+      <view class="left"> 
+        <image src="{{item.cropImg}}"></image>
+      </view>
+      <view class="right">
+        <view class="pingzhong">{{item.cropName}}</view>
+        <view class="name">{{item.variety}}</view>
+        <view class="time">{{item.createTime}}</view>
+      </view>
+    </view>
+  </view>
+</view>

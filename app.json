@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/welcome/index",
+   
+    "pages/create-ground/index",
+    "pages/repeat-add/index",
+    "pages/repeat-result/index",
+    "pages/repeat-incident/index",
+    "pages/plant-start/index",
+    "pages/create-farm/index",
+    "pages/find-farm/index",
+    "pages/map/index",
+    "pages/message/index",
+    "pages/getPhone/index",
+    "pages/login/index",
+    "pages/logs/logs"
+  ],
+  "subPackages": [
+    { 
+      "name": "packageA",
+      "root": "packageA",
+      "pages": [
+        "pages/question",
+        "pages/question-end"
+      ]
+    },
+    {
+      "name": "packageB",
+      "root": "packageB",
+      "pages": [
+        "pages/home",
+        "pages/home-farm",
+        "pages/home-farmer",
+        "pages/home-crop-detail",
+        "pages/home-credit",
+        "pages/home-farm-tabs",
+        "pages/home-farm-lists",
+        "pages/home-ground-lists",
+        "pages/add-registrar",
+        "pages/crop-msg",
+        "pages/batch-msg",
+        "pages/facility-msg",
+        "pages/facility-history",
+        "pages/facility-monitor",
+        "pages/facility-guanli",
+        "pages/add-plot"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/welcome/index": {
+      "network": "all",
+      "packages": [
+        "packageA"
+      ]
+    },
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "packageB"
+      ]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 200000
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.1",
+      "provider": "wx069ba97219f66d99"
+    }
+  }
+}

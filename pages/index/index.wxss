@@ -1,0 +1,205 @@
+ @import "../../templates/index-first/index.wxss";
+ @import "../../templates/index-top/index.wxss";
+  @import "../../templates/index-bottom/index.wxss";
+ @import "../../templates/index-complete/index.wxss";
+
+
+
+.page-index{
+  padding-bottom: 100rpx;
+}
+.page-header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 176rpx;
+  z-index: 999;
+}
+.page-msg{
+  padding-top: 200rpx;
+}
+/* 头部 */
+.kexin-title {
+  width: 750rpx;
+  height: 86rpx;
+  background: #595757;
+  color: #fff;
+  line-height: 86rpx;
+  z-index: 1000;
+}
+
+.user {
+  position: absolute;
+  left: 20rpx;
+  top:3rpx;
+  width: 100rpx;
+  height: 86rpx;
+  text-align: center;
+}
+
+
+.user image {
+  width: 40rpx;
+  height: 39rpx;
+  background-size: 100% 100%;
+}
+.jiance{
+  position: absolute;
+  right: 20rpx;
+  top:3rpx;
+  width: 100rpx;
+  height: 86rpx;
+  text-align: center;
+}
+.jiance image{
+  width: 40rpx;
+  height: 39rpx;
+  background-size: 100% 100%;
+}
+.kexin-title-wrapper {
+  text-align: center;
+  height: 86rpx;
+
+}
+
+.title-txt{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  font-size: 32rpx;
+  max-width: 400rpx;
+  margin: 0 auto;
+  justify-content: center;
+}
+.title-img,.title-img-cur{
+  width: 20rpx;
+  height: 86rpx;
+  position: relative;
+  padding-right:20rpx; 
+}
+.title-img::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 5rpx;
+  width: 10rpx;
+  height: 10rpx;
+  margin-top: -5rpx;
+  margin-left: 10rpx;
+  border-top: 1rpx solid #fff;
+  border-left: 1rpx solid #fff;
+  transform: rotate(-135deg);
+}
+
+
+.title-img-cur::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 5rpx;
+  width: 10rpx;
+  height: 10rpx;
+  margin-top: -2rpx;
+  margin-left: 10rpx;
+  border-top: 1rpx solid #fff;
+  border-left: 1rpx solid #fff;
+  transform: rotate(45deg);
+}
+
+.title-name{
+  padding: 10rpx 0;
+  margin-left: 20rpx;
+}
+.title-time,.title-variety{
+  font-size: 28rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+}
+/* 农事环节 */
+.tabs{
+  padding: 0 90rpx 0 20rpx;
+  width: 630rpx;
+  background: #fff;
+}
+.tabs-wrap{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: relative;
+}
+.tabs-inner{
+  width: 100%;
+  height: 90rpx;
+}
+.scroll-view{
+  width: 100%;
+  height: 90rpx;
+  white-space: nowrap;
+  display: flex
+}
+.tabs-item{
+  display: inline-block;
+  margin: 0 20rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #BFBFBF;
+  background: #fff;
+  border: none;
+}
+.tabs-item.cur{
+  color: #5BC177;
+  /* border-bottom: 2rpx solid #5BC177; */
+}
+.tabs-icon{
+  position: absolute;
+  right: 0rpx;
+  top: 86rpx;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #fff;
+  text-align: center;
+  box-shadow:-2rpx 0rpx 3rpx rgba(204,204,204,0.16);
+  z-index: 10;
+}
+.tabs-icon image{
+  width: 42rpx;
+  height: 42rpx;
+  vertical-align: -8rpx;
+  background-size: 100% 100%;
+}
+
+/* logo */
+.page-bot {
+  width: 750rpx;
+}
+
+.page-logo {
+  width: 750rpx;
+  height: 45rpx;
+  margin-top: 34rpx;
+  margin-bottom: 14rpx;
+  text-align: center;
+}
+
+.page-logo image {
+  width: 190rpx;
+  height: 45rpx;
+  background-size: 100%;
+}
+
+.page-button {
+  padding-top: 80rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight :400;
+  color: rgba(191,191,191,1);
+  width: 750rpx;
+  text-align: center;
+}
+
+

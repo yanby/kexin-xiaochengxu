@@ -1,0 +1,8 @@
+<view class="add-plot">
+  <view class="wrap">
+    <view class="list">地块性质： <text bindtap="tabFun" wx:for="{{items}}" class="{{active == item.id ? 'cur' : ''}}" data-id="{{item.id}}">{{item.name}}</text></view>
+    <view class="list">地块名称： <input placeholder='请输入地块名称' value="{{address}}" data-param="name" bindblur="bindblur" type="text" /></view>
+     <view class="list">地块面积： <input placeholder='请输入地块面积' value="{{address}}" data-param="area" bindblur="bindblur" type="text" /></view>
+     <view class="btn" bindtap="btnFun">确认</view>
+  </view>
+</view> 

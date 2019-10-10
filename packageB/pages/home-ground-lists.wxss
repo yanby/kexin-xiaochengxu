@@ -1,0 +1,74 @@
+.ground-lists{
+  padding: 30rpx 30rpx 100rpx;
+  font-size: 28rpx;
+}
+.title{
+  display: flex;
+}
+.title view{
+  width:120rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background:rgba(255,255,255,1);
+  border-radius:6rpx;
+  margin-right: 50rpx;
+}
+.title view.cur{
+  background:rgba(105,190,25,1);
+  color: #fff;
+}
+
+.detail{
+  color: rgba(105,190,25,1);
+}
+.list{
+  width:610rpx;
+  padding: 40rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx;
+  margin-top: 30rpx;
+}
+.one {
+  display: flex;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  justify-content: space-between;
+}
+.one image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.two{
+  margin-bottom: 20rpx;
+}
+.two view{
+  margin-bottom: 20rpx;
+}
+.btn{
+  display: flex;
+  justify-content: space-around;
+}
+.btn view{
+  width:180rpx;
+  height:60rpx;
+  border-radius: 10rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border:1rpx solid #ccc;
+  margin-top: 30rpx;
+  color: #999;
+}
+.addplot{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height:80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background: rgba(105,190,25,1);
+}

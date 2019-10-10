@@ -1,0 +1,23 @@
+<view class="facility-history">
+  <view class="page-time-card" >
+     <view class="page-time-list" wx:for="{{infos}}">
+       <view class="column1">
+         <view class="time-year">{{item.infoTimeDay}}</view>
+       </view>  
+       <view class="column2">
+         <!-- <view class="line1">{{plotCrop.coteName}} {{plotCrop.variety}}</view> -->
+          <view class="line2">
+            <view class="line2-left">值：{{item.infoValue}}{{item.unit}}</view>
+            <view class="line2-right"></view>
+          </view>
+          <view class="line3">采集时间：{{item.infoTimeHour}}</view>
+          <view class="zhuangtai" wx:if="{{item.rangeValue == '0'}}">合理</view>
+          <view class="zhuangtai gao" wx:elif="{{item.rangeValue == '1'}}">偏高</view>
+          <view class="zhuangtai di" wx:if="{{item.rangeValue == '-1'}}">偏低</view>
+       </view>
+       <view class="ball-top-line"></view>
+       <view class="ball-bot-line"></view>
+       <view class="ball"></view>
+     </view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+<view class="tab-model">
+  <view class="page-farm-work-repeat">
+    <view class="tabs-wrap">    
+      <view class="tabs-inner">
+        <view class="tabs-item {{menuActiveId === item.id ? 'cur' : ''}}" wx:key="{{item.id}}" wx:for="{{menuList}}" data-id="{{item.id}}" bindtap="menuActiveFun">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+
+    <view class="one" wx:if="{{templList.length}}">
+        <view class="one-item {{tempActiveId == item.id ? 'cur' : ''}}" wx:key="{{item.id}}" wx:for="{{templList}}" data-id="{{item.id}}" bindtap="tempActiveFun">{{item.name}}</view>
+    </view>
+    
+    <view class="page-button" wx:if="{{batchStatus == 0}}">
+      <form bindsubmit="submitFormId" report-submit='true' >
+        <button form-type="submit" class="button" bindtap="addRepeatWork">
+          添加记录
+        </button>
+      </form>
+    </view>
+
+    <view class="page-history">
+      <view class="history-title">历史记录</view>
+      <view class="history-list" wx:for="{{kxCropWorkTakeList}}">
+        <view class="list" data-id="{{item.id}}" bindtap="repeatFun">
+        {{item.createTimeStr}} <text wx:if="{{item.status == 0}}">未确认完成</text>
+        </view>
+      </view>
+    </view>
+    <!-- 页面底部 -->
+    <!-- <view class="page-bot">
+      <view class="page-logo">
+        <image src="/images/text1.png" mode="" />
+      </view>
+      <view class="page-button">
+        点滴之间 信任沉淀
+      </view>
+      
+    </view> -->
+  </view>
+</view>

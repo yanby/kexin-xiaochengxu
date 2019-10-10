@@ -1,0 +1,53 @@
+.facility-guanli{
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.title{
+  display: flex;
+}
+.title view{
+  width:120rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background:rgba(255,255,255,1);
+  border-radius:6rpx;
+  margin-right: 50rpx;
+}
+.title view.cur{
+  background:rgba(105,190,25,1);
+  color: #fff;
+}
+
+.list{
+  width:610rpx;
+  padding: 40rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx;
+  margin-top: 30rpx;
+}
+.one {
+  display: flex;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  justify-content: space-between;
+}
+.one image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.two view{
+  margin-bottom: 10rpx;
+}
+.btn{
+ width: 700rpx;
+ height: 80rpx;
+ line-height: 80rpx;
+ text-align: center;
+ margin: 50rpx auto 0;
+ font-size: 28rpx;
+ background: #5BC177;
+ color: #fff;
+ border-radius: 10rpx;
+}

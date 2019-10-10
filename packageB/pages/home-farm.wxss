@@ -1,0 +1,236 @@
+.page-home-farm {
+  width: 750rpx;
+}
+
+.page-card {
+  overflow: hidden;
+  width: 680rpx;
+  margin: 40rpx auto 0;
+  background: linear-gradient(360deg,rgba(91,193,119,1) 0%,rgba(57,201,163,1) 100%,rgba(255,80,134,1) 100%);
+  border-radius :12rpx;
+}
+
+.page-card-wrapper {
+  width: 660rpx;
+  margin: 10rpx auto;
+  background: rgba(255,255,255,0);
+  border: 4rpx solid rgba(255,255,255,0.25098039215686274);
+  border-radius: 12rpx;
+}
+
+.page-line1,.page-line2 {
+  position: relative;
+  width: 590rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 10rpx solid rgba(34,34,34,0.1);
+}
+
+.page-name {
+  font-size: 40rpx;
+  font-family: Bebas Neue;
+  font-weight: bold;
+  padding: 44rpx 0 34rpx;
+  color: rgba(255,255,255,1);
+  text-align: center;
+}
+.page-code{
+  font-size: 30rpx;
+  padding: 30rpx 0 20rpx;
+  color: rgba(255,255,255,1);
+  text-align: center;
+}
+
+.page-line1 image {
+  position: absolute;
+  top: 44rpx;
+  right: 0;
+  width: 30rpx;
+  height: 36rpx;
+  background-size: 100%;
+}
+
+.page-tips {
+  font-size: 24rpx;
+  font-family: Montserrat;
+  font-weight: bold;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+}
+.page-farm-score image{
+  width: 50rpx;
+  height: 46rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.page-farm-score {
+  font-size: 60rpx;
+  font-family: ADAMCG PRO;
+  color: rgba(255,255,255,1);
+  width: 250rpx;
+  margin: 6rpx auto 0;
+  text-align: center;
+  border-bottom: 4rpx solid rgba(255,255,255,0.5);
+}
+
+.page-farm-time {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 300;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  margin-top: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.page-line3 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 38rpx;
+  margin-bottom: 44rpx;
+}
+
+.page-line3-left-top,.page-line3-right-top {
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight :500;
+  line-height: 88rpx;
+  color: rgba(91,193,119,1);
+  width: 88rpx;
+  height: 88rpx;
+  background: rgba(255,255,255,1);
+  border: 6rpx solid rgba(255,255,255,0.25098039215686274);
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.page-line3-left-bot,.page-line3-right-bot {
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 300;
+  padding-top: 20rpx;
+  color: rgba(255,255,255,1);
+}
+
+.page-crops {
+  margin-top: 48rpx;
+}
+
+.page-tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 682rpx;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255,255,255,1);
+  border: 2rpx solid rgba(191,191,191,1);
+  border-radius:12px;
+}
+
+.page-tabs .picker {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: rgba(89,87,87,1);
+  width: 25%;
+  padding: 12rpx 0;
+  border-right: 2rpx solid rgba(191,191,191,1)
+}
+
+.page-tabs .picker:nth-last-child(1) {
+  border-right: none;
+}
+
+.page-crop-lists {
+  width: 682rpx;
+  margin: 20rpx auto 0;
+  background: rgba(255,255,255,1);
+  border-radius: 12rpx;
+}
+
+.page-crop-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 32rpx 40rpx 36rpx 36rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+
+.list-column-1 {
+  width: 173rpx;
+  height: 115rpx;
+  position: relative;
+}
+.list-column-1-type{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 10;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.list-column-1-type image{
+  width: 25rpx;
+  height: 23rpx;
+}
+
+.list-column-1 image {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+}
+
+.list-column-2 {
+  width: 356rpx;
+  margin-left: 20rpx;
+}
+
+.crop-name {
+  font-size: 28rpx;
+  font-family: SF Pro Text;
+  font-weight: bold;
+  color: rgba(26,26,26,1);
+  margin-bottom: 16rpx;
+}
+
+.crop-info,.crop-batch {
+  font-size: 24rpx;
+  font-family: SF Pro Text;
+  font-weight: 400;
+  margin-bottom: 10rpx;
+  color: rgba(89,87,87,1);
+}
+
+.list-column-3 {
+  flex-grow: 1;
+}
+
+.crop-score {
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  line-height: 80rpx;
+  color:rgba(255,255,255,1);
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(91,193,119,1);
+  border-radius: 50%;
+  text-align: center;
+}
+
+.crop-judge {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(89,87,87,1);
+  text-align: center;
+}

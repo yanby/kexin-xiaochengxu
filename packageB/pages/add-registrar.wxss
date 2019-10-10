@@ -1,0 +1,56 @@
+.add-registrar{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 100vh;
+  background: #fff;
+}
+.wrap{
+  padding: 0 30rpx;
+}
+.name{
+  padding:30rpx 0rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.list{
+  width:690rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eaeaea;
+  position: relative;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+}
+.del{
+  position: absolute;
+  top: 8rpx;
+  right: 5rpx;
+}
+.del image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.phone{
+  width:750rpx;
+  height:120rpx;
+  padding: 50rpx 30rpx 0;
+}
+.phone input{
+  width: 668rpx;
+  height: 90rpx;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+  border: 1rpx solid #eaeaea;
+}
+.btn{
+  width:686rpx;
+  height:95rpx;
+  line-height: 95rpx;
+  font-size: 40rpx;
+  text-align: center;
+  background:rgba(91,193,119,1);
+  border-radius:12rpx;
+  margin: 100rpx auto 0;
+  color: #fff;
+}

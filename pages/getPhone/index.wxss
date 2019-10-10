@@ -1,0 +1,95 @@
+.getPhone{
+  background: #fff;
+  padding: 50rpx;
+  height: 100vh;
+}
+.txt{
+  font-size: 30rpx;
+  padding: 80rpx 0;
+  line-height: 50rpx;
+}
+
+.page-button{
+  margin-top: 50rpx;
+}
+.page-button .button {
+  font-size: 40rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  line-height: 56rpx;
+  color: rgba(255,255,255,1);
+  width: 650rpx;
+  padding: 20rpx 0 18rpx;
+  margin: 0 auto 60rpx;
+  text-align: center;
+  background: #5BC177;
+  border-radius: 6rpx;
+  border: none;
+}
+.button-no{
+   font-size: 40rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  line-height: 56rpx;
+  color: rgba(255,255,255,1);
+  width: 650rpx;
+  padding: 20rpx 0 18rpx;
+  margin: 0 auto 60rpx;
+  text-align: center;
+  background: #ccc;
+  border-radius: 6rpx;
+  border: none;
+}
+.checkbox{
+  font-size: 30rpx;
+}
+.checkbox text{
+  color: #5BC177;
+}
+.modal{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5)
+}
+.modal-inner{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -350rpx;
+  margin-top: -500rpx;
+
+  width: 700rpx;
+  height: 1000rpx;
+  background: #fff;
+}
+.modal-list view{
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+.modal-list{
+  padding: 50rpx;
+}
+.ready{
+  width: 200rpx;
+  height: 80rpx;
+  margin: 50rpx auto;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: #5BC177;
+}
+.bold{
+  text-decoration:underline;
+}
+.form-btn{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	opacity:0;
+}

@@ -1,0 +1,79 @@
+<view class="page-home-farm">
+  <view class="page-card">
+    <view class="page-card-wrapper">
+      <view class="page-line1">
+        <view class="page-name">{{farmName}}</view>
+        <!-- <image src="{{imgUrl.more}}" mode="" bindtap="linkHomeCredit" /> -->
+      </view>
+      <view class="page-code">农场信用分</view>
+      <view class="page-line2">
+        <view wx:if="{{indexData.organicScoreBatchNum > 0}}">
+          <!-- <view class="page-tips"></view> -->
+          <view class="page-farm-score">{{indexData.organicScore}}分<image src="{{imgUrl.luse}}" mode=""/></view>
+          <view class="page-farm-time">截止到{{indexData.overTime}}</view>
+        </view>
+        <view wx:if="{{indexData.onOrganicScoreBatchNum > 0}}">
+          <!-- <view class="page-tips"></view> -->
+          <view class="page-farm-score">{{indexData.onOrganicScore}}分<image src="{{imgUrl.youji}}" mode=""/></view>
+          <view class="page-farm-time">截止到{{indexData.overTime}}</view>
+        </view>
+      </view> 
+      <view class="page-line3">
+        <view class="page-line3-left">
+          <view class="page-line3-left-top">{{indexData.coverageArea}}%</view>
+          <view class="page-line3-left-bot">可信覆盖面积</view>
+        </view>
+        <!-- <view class="page-line3-right">
+          <view class="page-line3-right-top">{{indexData.health}}份</view>
+          <view class="page-line3-right-bot">农场健康评估保报告</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+
+  <view class="page-crops">
+    <view class="page-tabs">
+      <view class="picker">
+        <picker bindchange="bindChang0" value="{{poltTypeIndex}}" range="{{poltType}}" range-key="key">
+          <view>{{poltType[poltTypeIndex].key}}</view>
+        </picker>
+      </view>
+      <view class="picker">
+        <picker bindchange="bindChang1" value="{{plotsIndex}}" range="{{plots}}" range-key="key">
+          <view>{{plots[plotsIndex].key}}</view>
+        </picker>
+      </view>
+      <view class="picker">
+        <picker bindchange="bindChang2" value="{{cropsIndex}}" range="{{crops}}" range-key="key">
+          <view>{{crops[cropsIndex].key}}</view>
+        </picker>
+      </view>
+      <view class="picker">
+        <picker bindchange="bindChang3" value="{{statusIndex}}" range="{{status}}" range-key="key">
+          <view>{{status[statusIndex].key}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="page-crop-lists">
+      <view class="page-crop-list" wx:for="{{list}}" data-id="{{item.id}}" bindtap="linkHomeCropDetail">
+        <view class="list-column-1">
+          <image src="{{item.cropImg}}" mode="" />
+          <view class="list-column-1-type">
+            <image wx:if="{{item.organic == 1}}" src="{{imgUrl.luse}}" mode=""/>
+            <image wx:if="{{item.noOrganic == 1}}" src="{{imgUrl.youji}}" mode=""/>
+          </view>
+        </view>
+        <view class="list-column-2">
+          <view class="crop-name">{{item.cropName}}</view>
+          <view class="crop-info">{{item.coteName}}</view>
+          <view class="crop-batch">{{item.variety}}</view>
+        </view>
+        <view class="list-column-3">
+          <view class="crop-score">{{item.score}}分</view>
+          <view class="crop-judge">极佳</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

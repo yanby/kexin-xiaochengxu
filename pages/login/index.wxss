@@ -1,0 +1,15 @@
+/* pages/login/index.wxss */
+.red{
+  width: 750rpx;
+  height: 1000rpx;
+  background: #f00;
+  margin-bottom: 20rpx;
+}
+.bottom{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 100rpx;
+  background: #000;
+}

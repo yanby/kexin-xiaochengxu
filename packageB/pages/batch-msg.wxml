@@ -1,0 +1,31 @@
+<view class="batch-msg">
+  <view class="content">
+    <view class="title">作物批次信息</view>
+    <view class="list">
+      <text>※品种名称：</text>
+      <input value="{{cropVariety}}" data-param="cropVariety" bindblur="onBlur" type="text" />
+    </view>
+    <view class="list">
+      <text>※种植面积：</text>
+      <input value="{{area}}" data-param="area" bindblur="onBlur" type="text" />
+    </view>
+     <view class="list">
+      <text>※种植标准:</text>
+      <radio-group class="radio-group" bindchange="radioBiaozhun">
+        <label class="radio" wx:for="{{plantStandard}}">
+          <radio value="{{item.value}}"/>{{item.label}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="list">
+      <text>※种植形式:</text>
+      <radio-group class="radio-group" bindchange="radioXingshi">
+        <label class="radio" wx:for="{{sowingForm}}">
+          <radio value="{{item.value}}"/>{{item.label}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="btn" bindtap="querenFun">确认</view>
+ 
+</view>

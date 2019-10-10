@@ -1,0 +1,67 @@
+<view class="page-home">
+  <view class="page-header" >
+    <view class="page-avator">
+      <view class="userImg"><image src="{{farmImg}}"></image></view>
+       <view class="page-farmname">{{farmName}}</view>
+    </view>
+    <view class="page-bg page-bg-left"><image src="{{imgUrl.dianlutuleft}}" mode="" /></view>
+    <view class="page-bg page-bg-right"><image src="{{imgUrl.dianluturight}}" mode="" /></view>
+  </view>
+
+  <view class="page-center">
+    <view class="page-farm">
+      <view class="page-farm-left">
+        <image class="page-farm-png" src="{{imgUrl.farm}}" mode="" />
+        <view class="page-farm-name">{{farmName}}</view>
+      </view>
+      <view class="page-farm-right">
+        <view wx:if="{{organicScoreBatchNum > 0}}" bindtap="linkHomeFarm" class="page-farm-score" >{{organicScore}}分</view>
+        <view wx:if="{{onOrganicScoreBatchNum > 0}}" bindtap="linkHomeFarm" class="page-farm-score" >{{onOrganicScore}}分</view>
+        <image bindtap="linktabFarm" class="page-farm-router" data-type="default" src="{{imgUrl.router}}" mode="" />
+      </view>
+    </view>
+
+    <view class="page-lists">
+      <view class="page-manage page-list" bindtap="changeFarm">
+        <view class="page-left">
+          <image src="{{imgUrl.manage}}" mode="" />
+          <view class="page-farm-name">管理农场</view>
+        </view>
+        <view class="page-right">
+          <image src="{{imgUrl.arrowRight}}" mode="" />
+        </view>
+      </view>
+      <view class="page-manage page-info page-list" bindtap="linkHomeFarmer">
+        <view class="page-left">
+          <image src="{{imgUrl.completeInfo}}" mode="" />
+          <view class="page-farm-name">完善资料</view>
+          <!-- <view class="page-farm-info-percentage">{{userInfo.dataIntegrity}}</view> -->
+        </view>
+        <view class="page-right">
+          <image src="{{imgUrl.arrowRight}}" mode="" />
+        </view>
+      </view>
+      <view class="page-manage page-info page-list" bindtap="linkMessage">
+        <view class="page-left">
+          <image src="{{imgUrl.completeInfo}}" mode="" />
+          <view class="page-farm-name">消息中心</view>
+          <view class="page-message" wx:if="{{msgCount > 0}}">
+           {{msgCount}}
+          </view>
+        </view>
+        <view class="page-right">
+          <image src="{{imgUrl.arrowRight}}" mode="" />
+        </view>
+      </view>
+      <view class="page-list" bindtap="addPerson">
+        <view class="page-left">
+          <image src="{{imgUrl.manage}}" mode="" />
+          <view class="page-farm-name">添加记录员</view>
+        </view>
+        <view class="page-right">
+          <image src="{{imgUrl.arrowRight}}" mode="" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="ground-lists">
+  <view class="addplot" bindtap="goAddplot">新增地块</view>
+  <view class="wrap">
+    <view class="title">
+     <view bindtap="tabFun" wx:for="{{items}}" class="{{active == item.id ? 'cur' : ''}}" data-id="{{item.id}}">{{item.name}}</view>
+    </view>
+    <view class="list" wx:for="{{groundlist}}">
+      <view class="one">
+        <text wx:if="{{item.type=='warm'}}">暖棚：{{item.name}}</text>
+        <text wx:else>冷棚：{{item.name}}</text>
+        <view class="" bindtap='delFun' data-id="{{item.id}}"><image src="/images/del.png"></image></view>
+      </view>
+      <view class="two">
+        <text>面积：{{item.area}}亩 </text><text>作物批次：{{item.batchNum}}</text>
+      </view>
+       <view class="two">
+        <view wx:for="{{item.deviceInfos}}" wx:for-item="itemValue">{{itemValue.inductor}}：{{itemValue.infoValue}}{{itemValue.unit}}</view>
+      </view>
+      <view class="two">
+        <text wx:if="{{item.deviceInfos.length}}" class="detail" bindtap="detailFun" data-id="{{item.id}}">详情</text>
+      </view>
+      <view class="btn">
+        <view wx:if="{{item.deviceNum > 0}}" bindtap="shebeiFun" data-id="{{item.id}}">管理设备</view>
+         <view wx:else bindtap="bindFun" data-id="{{item.id}}">绑定设备</view>
+        <view bindtap="dikuaiFun">修改地块</view>
+        <view bindtap="zuowuFun" data-id="{{item.id}}">管理作物</view>
+      </view>
+    </view>
+  </view>
+</view> 

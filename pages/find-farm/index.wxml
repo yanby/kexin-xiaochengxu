@@ -1,0 +1,14 @@
+<view class="find-farm">
+  <view class="wrap">
+    <view class="title">已在农场</view>
+    <view class="scroll">
+      <scroll-view scroll-x="{{true}}"  class="scroll-view">
+        <view bindtap='activeFun' data-id="{{item.id}}" class="tabs-item {{tabActive == item.id ? 'cur' : ''}}" wx:for="{{scrollList}}" >
+          {{item.name}}
+        </view>
+      </scroll-view>
+    </view> 
+    <view class="goFarm">进入农场</view>
+    <view class="creatfarm">创建农场 ></view>
+  </view>
+</view>

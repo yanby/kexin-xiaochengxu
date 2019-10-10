@@ -1,0 +1,17 @@
+<view class="facility-guanli">
+  <view class="wrap">
+    <view class="list" wx:for="{{groundlist}}">
+      <view class="one">
+        <text>{{item.name}}</text>
+        <view class="" bindtap='delFun' data-id="{{item.id}}"><image src="/images/del.png"></image></view>
+      </view>
+      <view class="two">
+        <view wx:for="{{item.newDeviceInfo}}" wx:for-item="itemValue">{{itemValue.inductor}}：{{itemValue.infoValue}}{{itemValue.unit}}</view>
+      </view>
+      <view class="two">
+        <view>设备编码：{{item.id}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn" bindtap="bindFun">添加设备</view>
+</view> 

@@ -1,0 +1,84 @@
+.page {
+  position: relative;
+  padding-bottom: 180rpx;
+}
+
+.page-title {
+  font-size: 60rpx;
+  font-family: SF Pro Text;
+  font-weight: bold;
+  padding-top: 74rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+  color: rgba(26,24,36,1);
+}
+
+.page-img {
+  width: 750rpx;
+  padding: 96rpx 0 104rpx;
+  text-align: center;
+}
+
+.page-img image {
+  width: 324rpx;
+  height: 254rpx;
+  background-size: 100%;
+}
+
+.page-content {
+  font-size: 32rpx;
+  font-family: SF Pro Text;
+  font-weight: 600;
+  width: 600rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 48rpx;
+  color: rgba(26,24,36,1);
+}
+
+.page-selection {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 48rpx;
+  color: rgba(26,24,36,1);
+  padding-top: 70rpx;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+
+.radio {
+  width: 100%;
+  margin-bottom: 70rpx;
+}
+
+.radio-txt{
+  margin-bottom: 40rpx;
+}
+.page-logo {
+  width: 750rpx;
+  height: 45rpx;
+  margin-top: 54rpx;
+  margin-bottom: 36rpx;
+  text-align: center;
+}
+
+.page-logo image {
+  width: 190rpx;
+  height: 45rpx;
+  background-size: 100%;
+}
+
+.page-button {
+  font-size: 40rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  line-height: 56rpx;
+  color: rgba(255,255,255,1);
+  width: 686rpx;
+  padding: 20rpx 0 18rpx;
+  text-align: center;
+  background: #5BC177;
+  border-radius: 6rpx;
+  margin: 0 auto 45rpx;
+}

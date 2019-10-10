@@ -1,0 +1,70 @@
+<template name="index-complete">
+
+  <view class="complete">
+    <view class="complete-wrap">
+      <!-- 采收单独处理 -->
+      <block wx:if="{{kxCropWorkTakeList.length}}">
+        <view class="index-recovery">
+          <view class="page-history">
+          <view wx:if="{{batchStatus==0}}" class="history-button" bindtap="bottomModalFun">继续采收</view>
+            <view class="history-title">历史记录</view>
+            <view class="history-list" wx:for="{{kxCropWorkTakeList}}">
+              <view class="history-item" data-id="{{item.id}}" bindtap="repeatFun">
+              {{item.createTimeStr}} <text wx:if="{{item.status == 0}}">未确认完成</text>
+              </view>
+            </view>
+          </view>
+      </view>
+      </block>  
+      <!-- 其他正常情况 -->
+      <block wx:else>
+        <view class="time-cur">农事时间：{{workTime}}</view>
+        <view class="complete-title" wx:if="{{status == 0}}">
+          <view class="complete-img">
+            <image src="{{imgUrl.nocomplete}}" mode=""/>
+          </view>
+          <view class="time">{{showInfos[0].createTime}}该任务尚未确认完成</view>
+        </view>
+        <view class="complete-title" wx:elif="{{status == 1}}">
+          <view class="complete-img">
+            <image src="{{imgUrl.complete}}" mode=""/>
+          </view>
+          <view class="time">{{showInfos[0].createTime}}全部完成</view>
+        </view>
+        
+        <block>
+          <view wx:for="{{showInfos}}" wx:key="{{item}}" wx:for-item="one">
+            <view class="leixing">
+              {{one.name}}
+            </view>
+            <view wx:for="{{one.infos}}" wx:for-item="two">
+              <view class="tuwen" wx:if="{{two.type == 'img'}}">
+                <view class="tuwen-img">
+                  <image bindtap="imgYu" data-src="{{three.path}}" wx:for="{{two.imgs}}" wx:for-item="three" src="{{three.path}}" mode=""/>
+                </view>
+                <view class="tuwen-txt">
+                  <view>{{two.name}}</view>
+                </view>
+              </view>
+              <view class="leibie" wx:elif="{{two.type == 'text'}}">{{two.name}}：
+              {{two.context}}</view>
+              <view class="leibie" wx:elif="{{two.type == 'textSelect'}}">{{two.name}}：{{two.context}}{{two.attachVal}}</view>
+              <view class="leibie" wx:elif="{{two.type == 'select'}}">{{two.name}}：{{two.attachVal}}</view>
+            </view>
+          </view>
+
+          <view wx:if="{{status==0}}">
+            <!-- <view class="weiwancheng">其他信息未完成</view> -->
+            <form bindsubmit="submitFormId" report-submit='true' >
+              <view class="nocomplate-button">
+                <button form-type="submit" class="complate-yes" bindtap="childCompleted">确认完成</button>
+                <button form-type="submit" class="complate-no" bindtap="bottomModalFun">增补信息</button>
+              </view>
+            </form>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+</template>

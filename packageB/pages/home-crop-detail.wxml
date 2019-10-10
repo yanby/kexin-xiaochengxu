@@ -1,0 +1,42 @@
+<view class="page-home-crop-detail">
+  <view class="page-crop-card">
+    <view class="list-column-1">
+      <image src="{{plotCrop.cropImg}}" mode=""/>
+    </view>
+    <view class="list-column-2">
+      <view class="crop-name">{{plotCrop.cropName}}</view>
+      <view class="crop-info">{{plotCrop.coteName}}</view>
+      <view class="crop-batch">{{plotCrop.variety}}批次</view>
+    </view>
+    <view class="list-column-3">
+      <view class="crop-score">{{plotCrop.score}}分</view>
+      <view class="crop-judge">极佳</view>
+    </view>
+  </view> 
+  <view class="page-time-card" >
+     <view class="page-time-list" wx:for="{{timerShaft}}">
+       <view class="column1">
+         <view class="time-year">{{item.year}}</view>
+         <view class="time-monthday">{{item.moon}}</view>
+       </view>  
+       <view class="column2">
+         <!-- <view class="line1">{{plotCrop.coteName}} {{plotCrop.variety}}</view> -->
+         <view class="line2">
+           <view class="line2-left">{{item.workName}}</view>
+           <view class="line2-right"></view>
+         </view>
+         <view class="line3" wx:if="{{child.type=='text' && child.context != null}}" wx:for="{{item.workInfos}}" wx:for-item="child"><text>{{child.name}}:{{child.context}}</text></view>
+
+         <view class="line4-wrap">
+            <view class="line4" wx:if="{{child.type=='img'}}" wx:for="{{item.workInfos}}" wx:for-item="child">
+            <image wx:for="{{child.imgs}}" bindtap="imgYu" data-src="{{itemImg.path}}" wx:for-item="itemImg" src="{{itemImg.path}}" mode="" />
+            </view>
+         </view>
+        
+       </view>
+       <view class="ball-top-line"></view>
+       <view class="ball-bot-line"></view>
+       <view class="ball"></view>
+     </view>
+  </view>
+</view>

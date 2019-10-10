@@ -1,0 +1,113 @@
+<import src="../../templates/index-first/index.wxml" />
+<import src="../../templates/index-top/index.wxml" />
+<import src="../../templates/index-bottom/index.wxml" />
+<import src="../../templates/index-complete/index.wxml" />
+
+
+
+<view class="page-index">
+
+  <view class="page-header">
+    <!-- header -->
+    <view class="kexin-title">
+      <view class="user" bindtap="tapHome"><image src="{{imgUrl.user}}" mode=""/></view>
+      <view class="kexin-title-wrapper">
+        <view class="title-txt" bindtap="choseBox">
+          <view class="title-inner">{{kxBatch.variety}} |</view>
+          <view class="title-name">
+            <view class="title-time">{{kxBatch.coteName}}</view>
+            <view class="title-variety">{{kxBatch.createTimeStr}}</view>
+          </view>
+          <view class="{{topModal == true ? 'title-img-cur' : 'title-img'}}"></view>
+        </view>
+      </view>
+       <view class="jiance" bindtap="jianceFun"><image src="{{imgUrl.jiankong}}" mode=""/></view>
+    </view>
+
+    <!-- 农事环节tab -->
+    <view class="tabs">
+    
+      <view class="tabs-icon" bindtap='repeatModalFun'><image src="{{imgUrl.menu}}" mode=""/></view>
+        <view class="tabs-wrap">    
+          <view class="tabs-inner">
+            <scroll-view scroll-x="{{true}}" class="scroll-view">
+            
+              <form bindsubmit="submitFormId" report-submit='true' >
+              
+                  <button form-type="submit" class="tabs-item {{menuActiveId == item.id ? 'cur' : ''}}" wx:key="{{item.id}}" wx:for="{{menuList}}" data-id="{{item.id}}" bindtap="menuActiveFun">
+                  
+                    {{item.name}}
+                  </button>
+                
+              </form>
+
+            </scroll-view>
+          </view>
+        </view>
+    </view>
+  </view>
+
+
+  <view class="page-msg">
+
+    <!-- 步骤菜单 -->
+    <block>  
+      <view class="module-process" wx:if="{{secondaryList.length}}">
+        <view class="module-process-wrapper">
+          <block wx:for="{{secondaryList}}" wx:key="{{item.id}}">
+            <view class="{{item.id == secondaryListId ? 'content content-active' : 'content'}}" data-id="{{item.id}}" bindtap='secondaryActiveFun'>
+              <view class="item-top">{{index + 1}}</view>
+              <view class="item-bot">{{item.name}}</view> 
+            </view>
+            <view wx:if="{{index !== secondaryList.length - 1}}" class="{{item.id === secondaryList ? 'dashed dashed-active' : 'dashed'}}"></view>
+          </block>
+        </view>
+      </view>
+
+      <!-- 模板菜单 -->
+      <view class="one" wx:if="{{templList.length}}">
+        <view class="one-item {{tempActiveId == item.id ? 'cur' : ''}}" wx:key="{{item.id}}" wx:for="{{templList}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="tempActiveFun">{{item.name}}</view>
+      </view>
+    </block>
+
+    <!-- 正常情况 -->
+    <block wx:if="{{status == -1}}">
+      <template is="index-first" data="{{imgUrl,showImgs}}"></template>
+    </block>
+
+    <!-- 已完成 -->
+    <block wx:elif="{{status == 0 || status == 1}}">
+      <template is="index-complete" data="{{imgUrl,showInfos,status,kxCropWorkTakeList,batchStatus,workTime}}"></template>
+    </block>
+    
+
+  </view>
+
+  <!-- top弹出层  -->
+  <block wx:if="{{topModal}}">
+    <template is="index-top" data="{{threeList,firstTree,secondTree,thirdTree,pengActiveId,farmName}}"></template>
+  </block>
+   
+  <!-- tab弹出层  -->
+  <block wx:if="{{repeatModal}}">
+    <template is="index-tab-modal" data="{{repetDate,repetActive}}"></template>
+  </block> 
+
+  <!-- 底部弹出层 -->
+  <block wx:if="{{bottomModal}}">
+    <template is="index-bottom" data="{{time,commonsList,singlesList,commonWorkInfoTemplList,otherActiveId,oneAttachIndex,twoAttachIndex,threeAttachIndex,flagList,imgUrl,scrolltop}}"></template>
+  </block>
+
+
+  <!-- 底部logo -->
+  <view class="page-bot">
+    <!-- <view class="page-logo">
+      <image src="{{imgUrl.logo1}}" mode="" />
+    </view> -->
+    <view class="page-button">
+      点滴之间 信任沉淀
+    </view>
+  </view>
+</view>
+ 
+   

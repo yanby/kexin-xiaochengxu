@@ -1,0 +1,41 @@
+<view class="create-ground">
+  <!-- <view class="map"><image src="" mode="" /></view>
+  <view class="tips">若无影像，可不做标记。仍可以修改棚号名称和修改地块面积。</view> -->
+  <view class="content">
+    <view class="msg">
+      <view class="list">
+        <view class="name">地块性质</view>
+        <view class="peng {{active == 0 ? 'cur' : ''}}" data-active="{{0}}" bindtap="changeFun">暖棚</view>
+        <view class="peng {{active == 1 ? 'cur' : ''}}" data-active="{{1}}" bindtap="changeFun">冷棚</view>
+      </view>
+      <view class="list"> 
+        <view class="name">选择地块</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{activeList}}" range-key="name">
+          <view class="picker">
+            {{activeList[index].name}}
+          </view>
+        </picker>
+      </view>
+       <view class="list">
+        <view class="name">修改名称</view>
+        <view class="mianji">
+           <input class="mianji" value="{{updataName}}" data-param="name" bindinput="bindblur" type="text" />  
+        </view>
+      </view>
+      <view class="list">
+        <view class="name">地块面积</view>
+        <view class="mianji">
+           <input class="mianji" value="{{area}}" data-param="area" bindinput="bindblur" type="digit" />
+           <text>亩</text>
+        </view>
+      </view>
+      <!-- <view class="list">
+        <view class="change"><input value="{{updataName}}" data-param="name" placeholder='更换棚号名称' bindinput="bindblur" ></input></view>
+      </view> -->
+    </view>
+    <view class="btn">
+      <view class="queren" bindtap="biaozhuFun">保存（{{coteStayNum}}/{{total}}）</view>
+      <view class="jieshu" bindtap="jieshuFun">下一步</view>
+    </view>
+  </view>
+</view>

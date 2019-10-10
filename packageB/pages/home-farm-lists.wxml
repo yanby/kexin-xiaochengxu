@@ -1,0 +1,35 @@
+<view class="farm-lists">
+  <view class="modal" wx:if="{{modal}}">
+    <view class="modal-inner">
+      <view class="modal-txt">请输入您要修改的信息</view>
+      <view class="modal-msg"><input value="" bindblur="bindblur"/></view>
+      <view class="modal-btn"><text bindtap="cancelFun">取消</text><text bindtap="configFun">确认</text></view>
+    </view>
+  </view>
+  <view class="addFarm" bindtap='addFarm'>+</view> 
+  <view class="wrap" wx:for="{{farms}}">
+    <view class="name">
+      <view class="names">
+         <view class="item-name">{{item.name}}</view>
+         <view class="gai" data-id="{{item.id}}" data-param="name" bindtap="bindtap"><image src="/images/gai.png"></image></view>
+      </view>
+      <view class="del" data-id="{{item.id}}" bindtap="delParm"><image src="/images/del.png"></image></view>
+    </view>
+    <view class="peng"><text>暖棚：{{item.warmNum}}个 </text><text>冷棚：{{item.coldNum}}个</text></view>
+    <!-- <view class="map"></view> -->
+    <view class="address">
+      <text>农场位置：</text>
+       <view class="item-name">{{item.path}}</view>
+      <view class="gai" data-id="{{item.id}}" data-param="address" bindtap="bindtap"><image src="/images/gai.png"></image> </view>
+      </view>
+    <view class="area">
+      <text>农场面积(亩)：</text>
+      <view class="item-name">{{item.area}}</view>
+      <view class="gai"><image src="/images/gai.png" data-id="{{item.id}}" data-param="area" bindtap="bindtap"></image></view>
+    </view>
+    <view class="btn">
+      <!-- <view bindtap="quandiFun" data-farmid="{{item.farmId}}">修改圈地</view> -->
+      <view bindtap="dikuaiFun" data-id="{{item.id}}">管理地块</view>
+    </view>
+  </view>
+</view> 

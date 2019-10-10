@@ -1,0 +1,29 @@
+<view class="facility-msg">
+  <view class="content">
+    <view class="msg">
+       <view class="list">
+        <view class="name">设备名称</view>
+        <view class="mianji">
+           <input class="mianji" value="{{name}}" type="text" disabled="disabled" placeholder="扫码后自动获取"/>  
+        </view>
+      </view>
+      <view class="list">
+        <view class="name">设备类型</view>
+        <view class="mianji">
+           <input class="mianji" value="{{type}}" type="text" disabled="disabled" placeholder="扫码后自动获取"/>  
+        </view>
+      </view>
+      <view class="list">
+        <view class="name">设备编码</view>
+        <view class="mianji">
+           <input class="mianji" value="{{result}}" type="text" disabled="disabled" placeholder="扫码后自动获取"/>  
+        </view>
+      </view>
+    </view>
+    <form bindsubmit="submitFormId" report-submit='true' >
+    <button form-type="submit" class="btn" bindtap="jieshuFun">
+      添加
+    </button>
+    </form>
+  </view>
+</view>

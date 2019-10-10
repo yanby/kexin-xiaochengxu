@@ -1,0 +1,42 @@
+<view class="page-create-farm">
+  <view class="page-card">
+    <view class="page-title">农场名字</view>
+    <view class="page-input">
+      <input value="{{farmName}}" type="" data-param="farmName" bindblur="onBlur" placeholder="请输入您的农场名字" />
+    </view>
+    <view class="page-box page-box-warm">
+      <view class="type">暖棚</view>
+      <view class="jian" data-param="brooderCount" bindtap="tapJian">-</view>
+      <view class="value">
+        <input class="brooderCount" value="{{brooderCount}}" disabled="{{query.type === 'edit'}}" data-param="brooderCount" bindblur="onBlur" type="tel" />
+      </view>
+      <view class="jia" data-param="brooderCount" bindtap="tapJia">+</view>
+    </view>
+    <view class="page-box page-box-cold">
+      <view class="type">冷棚</view>
+      <view class="jian" data-param="coolCount" bindtap="tapJian">-</view>
+      <view class="value">
+        <input class="coolCount" disabled="{{query.type === 'edit'}}" value="{{coolCount}}" data-param="coolCount" bindblur="onBlur" type="tel" />
+      </view>
+      <view class="jia" data-param="coolCount" bindtap="tapJia">+</view>
+    </view>
+    <view class="map">
+    <!-- <view class="mapTop"><image src="" mode="" /></view> -->
+    <view class="mapTxt">
+      <view class="address"><text>农场位置：</text><input placeholder='请输入农场的位置' value="{{address}}" data-param="address" bindblur="onBlur" type="text" /></view>
+      <view class="area"><text>农场面积(亩)：</text><input placeholder='请输入农场的面积' value="{{area}}" data-param="area" bindblur="onBlur" type="digit" /></view>
+    </view>
+  </view>
+  </view>
+  
+  <view class="page-bot">
+    <view class="page-logo">
+      <image src="{{imgUrl.logo}}" mode="" />
+    </view>
+    <view class="page-button">
+      <view class="button" bindtap="linkPlantStart">确认</view>
+    </view>
+  </view>
+</view>
+
+

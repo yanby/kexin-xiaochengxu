@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="page-title">
+    第{{ num + 1 }}题
+  </view>
+  <!-- <view class="page-img">
+    <image src="/images/wenben.png" mode="" />
+  </view> -->
+  <view class="page-content">
+    {{showQuest.title}}
+  </view>
+  <view class="page-selection">
+    <radio-group class="radio-group" bindchange="radioChange" wx:for="{{showQuest.answers}}"  data-index='{{index}}'>
+      <view class="radio-txt" >
+        <label class="radio">
+          <radio value="{{item.context}}" checked="{{radioFlag == index}}"/>{{item.context}}
+        </label>
+      </view>
+      
+    </radio-group>
+  </view>
+  <view class="page-bottom">
+    <view class="page-logo">
+      <image src="{{imgUrl.logo}}" mode="" />
+    </view>
+    <view class="page-button">
+      <view bindtap="nextQuestion">下一题</view>
+    </view>
+  </view>
+</view>

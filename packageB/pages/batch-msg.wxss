@@ -1,0 +1,68 @@
+.batch-msg {
+  position: relative;
+  width: 750rpx;
+  background: #fff;
+}
+
+.page-card {
+  width: 670rpx;
+  padding: 0 40rpx;
+  background: #FFF;
+}
+
+.page-title {
+  font-size: 30rpx;
+  padding: 50rpx 0 0;
+}
+
+.content{
+  width: 670rpx;
+  padding: 0 40rpx;
+}
+.title{
+  padding-top: 40rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+.list{
+  display: flex;
+  font-size: 28rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 40rpx;
+}
+.list text{
+  margin-right: 60rpx;
+}
+.list input{
+  width: 400rpx;
+  height: 68rpx;
+  min-height: 68rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #eaeaea;
+}
+.pv-left{
+  margin-bottom: 60rpx;
+}
+.picker-view{
+  width: 600rpx;
+  margin: 0 auto;
+  height: 200rpx;
+  font-size: 34rpx;
+}
+.picker-view view{
+  line-height: 34px;
+  text-align: center;
+}
+.btn{
+  width:654rpx;
+  height:94rpx;
+  margin: 60rpx auto 0;
+  text-align: center;
+  color: #fff;
+  line-height: 94rpx;
+  background:#5BC177;
+  border-radius:20rpx;
+}

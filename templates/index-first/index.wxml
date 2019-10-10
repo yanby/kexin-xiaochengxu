@@ -1,0 +1,29 @@
+<template name="index-first">
+
+  <view class="index-first">  
+    <!-- 拍照环节 -->
+    <view class="take">
+      <view class="take-title">
+        <image src="{{imgUrl.logo}}" mode=""/>
+        <text>请您按照如下提示拍照</text>
+      </view>
+      <view class="take-msg">
+        <view class="take-swiper">
+          <swiper class='u-wrp-bnr' indicator-color="#fff" indicator-active-color="#F39700" indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+            <block wx:for="{{showImgs}}" wx:key="{{item}}">
+              <swiper-item>
+                <text class="swiper-txt">{{item.context}}</text>
+                <image src='{{item.img}}' class='u-img-slide'></image>
+              </swiper-item>
+            </block>  
+          </swiper>
+          <view class="take-pai" bindtap="bottomModalFun">
+            <image src="{{imgUrl.camera}}" mode=""/>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+
+</template>

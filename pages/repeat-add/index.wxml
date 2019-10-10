@@ -1,0 +1,198 @@
+<view class="detail-wrap">
+  <view class="detail-inner">
+    <view class="detail">
+      <view class="timer">
+      <!-- <view class="time-txt">农事时间</view> -->
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{time}}
+          </view>
+        </picker>
+      </view>
+      
+      <!-- <view class="detail-content"> -->
+       <view class="detail-msg">
+            
+            <block wx:for="{{commonWorkInfoTemplList}}" wx:key="{{item}}" wx:for-index="oneIndex">
+              <!-- 图片类型 -->
+              <view class="tupian" wx:if="{{item.type == 'img'}}">
+                <view class="tu-wrap">
+                  <view class="tu-inner">
+                    <view class="tu-img" wx:for="{{item.imgs}}"  wx:if="{{item.imgs.length}}" wx:for-item="itemValue" wx:for-index="twoIndex">
+                      <image src="{{itemValue.path}}" mode="" />
+                      <view class="tu-del" data-id="{{itemValue.id}}" data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" bindtap="oneDelImgFun">x</view>
+                    </view>
+                    
+                    <view class="tu-add" wx:if="{{item.imgs.length < 3}}" data-index="{{oneIndex}}" bindtap="chooseImg">+</view>
+                  </view>
+                </view>
+                <view class="tu-txt">{{item.name}}</view>
+              </view>
+              <!-- 文字类型 -->
+              <view class="list" wx:elif="{{item.type == 'text'}}">
+                <view class="list-txt">
+                  <text> {{item.name}}：</text><input data-index="{{oneIndex}}" value="{{item.context}}" bindblur="changeTxt"/>
+                </view>
+              </view>
+              <!-- 选择类型 -->
+              <view class="list list-other" wx:elif="{{item.type == 'textSelect'}}">
+                <view class="list-txt">
+                  <text class="select-txt"> {{item.name}}：</text><input data-index="{{oneIndex}}" value="{{item.context}}" bindblur="changeTxt"/>
+                  <view class="list-danwei">
+                    <picker-view data-index="{{oneIndex}}" value="{{value}}" indicator-style="height: 50rpx;" bindchange="onePickerChange">
+                      <picker-view-column>
+                        <view wx:for="{{item.attachArr}}" wx:for-item="child">{{child}}</view>
+                      </picker-view-column>
+                    </picker-view>
+                  </view>
+                  <view class="list-xianshi">{{item.attachVal}}</view>
+                </view>
+              </view>
+              <view class="list" wx:elif="{{item.type == 'select'}}">
+                <view class="list-txt">
+                  <text class="select-txt"> {{item.name}}：</text>
+                  <text class="select-txt" wx:if="{{item.attachVal}}">{{item.attachVal}}</text>
+                  <view class="list-select">
+                    <picker data-index="{{oneIndex}}" bindchange="oneAttachChange" value="{{oneAttachIndex}}" range="{{item.attachArr}}">
+                      <view class="picker">
+                        {{item.attachArr[oneAttachIndex]}}
+                      </view>
+                    </picker>
+                  </view>
+                 
+                </view>
+              </view>
+            </block>
+
+            <!-- 消毒投入品 -->
+            <block wx:for="{{commonsList}}" wx:if="{{commonsList.length}}" wx:for-index="oneIndex" wx:for-item="commons">
+              <view class="other">
+                <text>{{commons.name}}：</text>
+                <view class="otherOpen" bindtap="childTouruFun" data-index="{{oneIndex}}"><view wx:if="{{commons.show!=true}}">展开 <image src="{{imgUrl.down}}"></image></view><view wx:else>收起<image src="{{imgUrl.top}}"></image></view></view>
+              </view>
+              <view class="turu-wrap" wx:if="{{flagList[oneIndex]}}">
+                <view class="touruping" wx:for="{{commons.workInfoTempls}}" wx:for-index="twoIndex" wx:for-item="child">
+                  <view class="tou-title" wx:if="{{child.type == 'img'}}">
+                    <view class="tou-tupian"> 
+                      <view class="tou-tu" wx:for="{{child.imgs}}" wx:for-item="childImg"> 
+                        <image src="{{childImg.path}}" mode="" />
+                        <view class="tu-del" data-id="{{childImg.id}}" data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" bindtap="twoDelImgFun">x</view>
+                      </view>
+                      <view class="tou-img" wx:if="{{child.imgs.length < 3}}"> 
+                        <view class="tu-add" data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" bindtap="childChooseImg">+</view>
+                      </view>
+                    </view>
+                    <view class="tou-txt">{{child.name}}</view>
+                  </view>
+                  <view class="list"  wx:elif="{{child.type == 'text'}}">
+                    <view class="list-txt">
+                      <text> {{child.name}}：</text><input data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" value="{{child.context}}" bindblur="childChangeTxt"/>
+                    </view>
+                  </view>
+                  <view class="list"  wx:elif="{{child.type == 'textSelect'}}">
+                    <view class="list-txt" >
+                      <text> {{child.name}}：</text><input data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" value="{{child.context}}" bindblur="childChangeTxt"/>
+                      <view class="list-danwei">
+                        <picker-view data-oneIndex="{{oneIndex}}" mask-class="mask-class" data-twoIndex="{{twoIndex}}" value="{{value}}" indicator-style="height: 50rpx;" bindchange="twoPickerChange">
+                          <picker-view-column>
+                            <view wx:for="{{child.attachArr}}" wx:for-item="three">{{three}}</view>
+                          </picker-view-column>
+                        </picker-view>
+                      </view>
+                      <view class="list-xianshi" wx:if="{{item.attachVal}}">{{child.attachVal}}</view>
+                    </view>
+                    
+                  </view>
+                  <view class="list" wx:elif="{{child.type == 'select'}}">
+                    <view class="list-txt">
+                      <text class="select-txt"> {{child.name}}：</text>
+                      <text class="select-txt">{{child.attachVal}}</text>
+                      <view class="list-select">
+                        <picker data-oneIndex="{{oneIndex}}"  data-twoIndex="{{twoIndex}}" bindchange="twoAttachChange" value="{{twoAttachIndex}}" range="{{child.attachArr}}">
+                          <view class="picker">
+                            {{child.attachArr[twoAttachIndex]}}
+                          </view>
+                        </picker>
+                      </view>
+                    
+                    </view>
+                  </view>
+                </view> 
+                <view class="other-txt" wx:if="{{commons.duplicate==3}}">若有其他{{commons.name}}，请保存后继续添加</view>
+                <view class="copy" wx:if="{{commons.duplicate==1}}" data-id="{{commons.id}}" bindtap="copyFun"><text>继续添加</text> </view>
+                <view class="copy" wx:elif="{{commons.duplicate==3}}" bindtap="copyResult"><text>保存</text> </view>
+              </view>
+            </block>
+
+            <!-- 肥料投入品 -->
+            <block wx:for="{{singlesList}}" wx:if="{{singlesList.length}}" wx:for-index="oneIndex" wx:for-item="singles">
+             <view class="other">
+                <text>{{singles.name}}：</text>
+                <view class="otherOpen" bindtap="otherTouruFun" data-index="{{oneIndex}}"><view wx:if="{{singles.show!=true}}">展开 <image src="{{imgUrl.down}}"></image></view><view wx:else>收起<image src="{{imgUrl.top}}"></image></view></view>
+              </view>
+              <!-- 选项 -->
+              <view class="otherList" wx:if="{{singles.show}}">
+                <view class="otherList-item {{otherActiveId == groudMapList.id ? 'cur' : ''}}" data-id="{{groudMapList.id}}" wx:for="{{singles.groudMapList}}" wx:for-index="twoIndex" wx:for-item="groudMapList" bindtap='otherTitleFun' data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}">{{groudMapList.name}}</view>
+              </view>
+              <!-- 选项对应的内容 -->
+              <view class="turu-wrap" wx:for="{{singles.showObj}}" wx:for-index="twoIndex" wx:for-item="child" >
+                <view class="touruping">
+                  <view class="tou-title" wx:if="{{child.type == 'img'}}">
+                     <view class="tou-tupian"> 
+                      <view class="tou-tu" wx:for="{{child.imgs}}" wx:for-item="childImg"> 
+                        <image src="{{childImg.path}}" mode="" />
+                        <view class="tu-del" data-id="{{childImg.id}}" data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" bindtap="threeDelImgFun">x</view>
+                      </view>
+                      <view class="tou-img" wx:if="{{child.imgs.length < 3}}"> 
+                        <view class="tu-add" data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" bindtap="otherChooseImg">+</view>
+                      </view>
+                    </view>
+                    <view class="tou-txt">{{child.name}}</view>
+                  </view>
+                  <view class="list"  wx:elif="{{child.type == 'text'}}">
+                    <view class="list-txt">
+                      <text> {{child.name}}：</text><input data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" value="{{child.context}}" bindblur="otherChangeTxt"/>
+                    </view>
+                  </view>
+                  <view class="list"  wx:elif="{{child.type == 'textSelect'}}">
+                    <view class="list-txt">
+                      <text> {{child.name}}：</text><input data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" value="{{child.context}}" bindblur="otherChangeTxt"/>
+                      <view class="list-danwei">
+                        <picker-view data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" value="{{value}}" indicator-style="height: 50rpx;" mask-class="mask-class" bindchange="threePickerChange">
+                          <picker-view-column>
+                            <view wx:for="{{child.attachArr}}" wx:for-item="three">{{three}}</view>
+                          </picker-view-column>
+                        </picker-view>
+                      </view>
+                       <view class="list-xianshi">{{child.attachVal}}</view>
+                    </view>
+                  </view>
+                   <view class="list" wx:elif="{{child.type == 'select'}}">
+                    <view class="list-txt">
+                      <text claa="select-txt"> {{child.name}}：</text>
+                      <text class="select-txt" wx:if="{{item.attachVal}}">{{child.attachVal}}</text>
+                      <view class="list-select">
+                        <picker data-oneIndex="{{oneIndex}}" data-twoIndex="{{twoIndex}}" bindchange="threeAttachChange" value="{{threeIndex}}" range="{{child.attachArr}}">
+                          <view class="picker">
+                             {{child.attachArr[threeAttachIndex]}}
+                          </view>
+                        </picker>
+                      </view>
+                    
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+
+      </view>
+    
+      <!-- </view> -->
+      
+      <!-- 页面底部 -->
+      <view class="btn" bindtap='bottomConfigFun'>确定</view>
+
+    </view>
+  </view>
+</view>
+  

@@ -1,0 +1,32 @@
+.farm-tabs{
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+
+.list{
+  background: #fff;
+  width: 630rpx;
+  padding: 50rpx 30rpx 50rpx;
+  margin: 0 auto 30rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+.name{
+  color: #69BE19;
+  font-size: 34rpx;
+}
+.area{
+  padding: 50rpx 0 30rpx;
+}
+.qiehuan{
+  position: absolute;
+  right: 50rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #69BE19;
+  border: 1rpx solid #69BE19;
+  padding: 3rpx 10rpx;
+}
+.peng text{
+  margin-right: 30rpx;
+}

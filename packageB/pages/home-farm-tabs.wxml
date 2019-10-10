@@ -1,0 +1,12 @@
+<view class="farm-tabs">
+  <view class="wrap">
+    <view class="list" wx:for="{{farms}}" wx:key="{{item.officeId}}">
+      <view class="name">{{item.name}}</view>
+      <view class="area">面积：{{item.area}}亩</view>
+      <view class="peng">
+        <text>暖棚：{{item.warmNum}}个</text><text>冷棚：{{item.coldNum}}个</text>
+      </view>
+      <view class="qiehuan" data-id="{{item.id}}" bindtap='changeParm'>切换</view>
+    </view>
+  </view>
+</view> 

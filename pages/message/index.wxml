@@ -1,0 +1,29 @@
+<view class="message">
+  <view class="list" wx:for="{{farmMsgs}}" bindtap="readFun" data-id="{{item.id}}">
+    <view class="title">
+      <view class="name">{{item.title}} <view wx:if="{{item.readsStatus == 0}}" class="name-red"></view></view>
+      <view class="time">{{item.createTime}}</view>
+    </view>
+    <view class="txt">
+      {{item.msg}}
+    </view>
+    <view class="btn" wx:if="{{item.type != 'comm'}}">
+      <block wx:if="{{item.type == 'credit'}}">
+        <text class="jieshou" data-id="{{item.id}}" data-obj="{{item.obj}}" data-index="1" bindtap="resultFun">接受</text>
+        <text class="jujue" data-id="{{item.id}}" data-obj="{{item.obj}}" data-index="-1"  bindtap="resultFun">拒绝</text>
+      </block>
+      <!-- <block wx:elif="">
+        <text class="succedd">授信成功</text>
+      </block>
+      <block wx:elif="">
+        <text class="reject">已拒绝</text>
+      </block>
+      <block wx:elif="">
+        <text class="review">审核中</text>
+      </block> -->
+      <block wx:elif="{{item.type == 'auditing'}}">
+        <text class="nopass" bindtap="updataFun">重新上传</text>
+      </block>
+    </view>
+  </view>
+</view>

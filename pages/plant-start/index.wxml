@@ -1,0 +1,52 @@
+<view class="page-plant-start">
+  <view class="page-card">
+    <view class="page-title">选择地块和种植作物</view>
+    <view class="pv-left"> 
+      <picker-view class="picker-view" value="{{value}}" indicator-style="height: 50rpx;" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{firstTree}}">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{secondTree}}">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{thirdTree}}">{{item.name}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="title">完善作物批次信息</view>
+    <view class="list">
+      <text>※品种名称：</text>
+      <input value="{{cropVariety}}" data-param="cropVariety" bindblur="onBlur" type="text" />
+    </view>
+    <view class="list">
+      <text>※种植面积：</text>
+      <input value="{{area}}" data-param="area" bindblur="onBlur" type="digit" />
+    </view>
+     <view class="list list-other">
+      <text>※种植标准:</text>
+      <radio-group class="radio-group" bindchange="radioBiaozhun">
+        <label class="radio" wx:for="{{plantStandard}}">
+          <radio value="{{item.id}}"/>{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="list list-last">
+      <text>※种植形式:</text>
+      <radio-group class="radio-group" bindchange="radioXingshi">
+        <label class="radio" wx:for="{{sowingForm}}">
+          <radio value="{{item.id}}"/>{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <form bindsubmit="submitFormId" report-submit='true' >
+    <button form-type="submit" class="btn" bindtap="querenFun">
+     确认
+    </button>
+  </form>
+ 
+ 
+</view>

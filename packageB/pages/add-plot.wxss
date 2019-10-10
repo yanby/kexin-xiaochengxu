@@ -1,0 +1,48 @@
+.add-plot{
+  padding: 50rpx;
+  font-size: 28rpx;
+  background: #fff;
+  height: 100vh;
+}
+.list{
+  height: 68rpx;
+  line-height: 68rpx;
+  width: 100%;
+  margin-bottom: 50rpx;
+  font-size: 32rpx;
+  display: flex;
+}
+.list input{
+  height: 68rpx;
+  line-height: 68rpx;
+  padding-left: 20rpx;
+  border-radius:10rpx;
+  width: 450rpx;
+  font-size:28rpx;
+  border:1rpx solid rgba(178, 178, 178, 1);
+}
+.list text{
+  display: inline-block;
+  width:120rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius:6rpx;
+  margin-right: 50rpx;
+  border: 1rpx solid rgba(178, 178, 178, 1);
+}
+.list text.cur{
+  background:rgba(105,190,25,1);
+  border: 1rpx solid rgba(105,190,25,1);
+  color: #fff;
+}
+.btn{
+  width: 600rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height:80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background: rgba(105,190,25,1);
+}

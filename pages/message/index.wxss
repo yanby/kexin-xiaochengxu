@@ -1,0 +1,62 @@
+.message{
+  padding-top: 40rpx;
+  padding-bottom: 100rpx;
+}
+.list{
+  width:608rpx;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30rpx 40rpx;
+  border-radius: 30rpx;
+  margin-bottom: 30rpx;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 46rpx;
+}
+.name{
+  font-size: 32rpx;
+  position: relative;
+}
+.name-red{
+  position: absolute;
+  right: -20rpx;
+  top: 0;
+  width: 20rpx;
+  height: 20rpx;
+  background: #FA5151;
+  border-radius: 50%;
+}
+.time{
+  font-size: 24rpx;
+  color: #969696;
+}
+.txt{
+  font-size: 28rpx;
+  color: #707070;
+  padding-bottom: 40rpx;
+  
+}
+.btn{
+  border-top: 1rpx solid #eaeaea;
+  text-align: right;
+  font-size: 26rpx;
+  padding: 30rpx 0 0;
+}
+.jieshou{
+  color: #009EFF;
+}
+.jujue{
+  margin-left: 30rpx;
+  color: #969696;
+}
+.succedd{
+  color: #69BC19;
+}
+.reject{
+  color: #FA5151;
+}
+.review,.nopass{
+  color: #009EFF;
+}
